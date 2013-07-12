@@ -5,20 +5,13 @@
 
 execute pathogen#infect()
  
-" ________________________________________________________
-"
-"     Zenwalk's default settings
-" ________________________________________________________
- 
 set nocompatible
 set bs=2
 set tw=0
 set cindent
 set mouse=a
 set mousehide
-
 set nowrapscan
-
 set showmatch
 set showmode
 set uc=0
@@ -39,11 +32,6 @@ endif
 syntax on
 filetype plugin on
 filetype plugin indent on
- 
-" ________________________________________________________
-"
-"     Personal settings
-" ________________________________________________________
  
 colorscheme delek
 set guifont=Monospace\ 8
@@ -78,14 +66,14 @@ set autochdir
  
 "
 "-------------------------
-" Ecim setting
+" Eclim setting
 "-------------------------
 set guioptions-=m " turn off menu bar
 set guioptions-=T " turn off toolbar
 set guioptions-=L " turn off left scrollbar
 
-nmap <silent> <c-SPACE> :call eclim#vimplugin#FeedKeys('Ctrl+Space')<cr>
-nmap <silent> <c-f> :call eclim#vimplugin#FeedKeys('Ctrl+f')<cr>
+"nmap <silent> <c-SPACE> :call eclim#vimplugin#FeedKeys('Ctrl+Space')<cr>
+"nmap <silent> <c-f> :call eclim#vimplugin#FeedKeys('Ctrl+f')<cr>
 
 " BÉPO key bindings
 source ~/.vimrc.bepo

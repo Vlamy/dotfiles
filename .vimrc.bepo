@@ -1,4 +1,4 @@
-" I need another Esc key
+" rebinding Esc key
 imap ,, <Esc>
 noremap <C-s>  :write<CR>
 inoremap <C-s>  <Esc>:write<CR>
@@ -67,21 +67,3 @@ noremap gé gt
 "noremap gB :exe "silent! tabfirst"<CR>
 "noremap gÉ :exe "silent! tablast"<CR>
 " optionnel : {g"} pour aller au début de la ligne écran
-noremap g" g0
- 
-" <> en direct
-" ————————————
-noremap « <
-noremap » >
- 
-" Remaper la gestion des fenêtres
-" ———————————————————————————————
-"noremap wt <C-w>j
-"noremap ws <C-w>k
-"noremap wc <C-w>h
-"noremap wr <C-w>l
-"noremap wd <C-w>c
-"noremap wo <C-w>o
-"noremap wq <C-w>c
-"noremap w<SPACE> :split<CR>
-"noremap w<CR> :vsplit<CR>
