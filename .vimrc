@@ -1,11 +1,4 @@
-" source the .vimrc file on save to apply all changes immediately
-"if has("autocmd")
-"  autocmd! bufwritepost .vimrc source ~/.vimrc
-"endif 
-
-execute pathogen#infect()
- 
-set nocompatible
+"TODO : use a mapleader
 set bs=2
 set tw=0
 set cindent
@@ -30,9 +23,21 @@ else
 endif
  
 syntax on
-filetype plugin on
-filetype plugin indent on
  
+"Vundle
+set nocompatible "required for vundle
+filetype off
+
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+Plugin 'VundleVim/Vundle.vim'
+Plugin 'tpope/vim-fugitive'
+Plugin 'ctrlpvim/ctrlp.vim'
+
+call vundle#end()            " required
+filetype plugin indent on    " required
+
 colorscheme delek
 set guifont=Monospace\ 8
 set foldmethod=indent
@@ -64,16 +69,3 @@ set autochdir
 "     Personal mappings
 " ________________________________________________________
  
-"
-"-------------------------
-" Eclim setting
-"-------------------------
-set guioptions-=m " turn off menu bar
-set guioptions-=T " turn off toolbar
-set guioptions-=L " turn off left scrollbar
-
-"nmap <silent> <c-SPACE> :call eclim#vimplugin#FeedKeys('Ctrl+Space')<cr>
-"nmap <silent> <c-f> :call eclim#vimplugin#FeedKeys('Ctrl+f')<cr>
-
-" BÉPO key bindings
-source ~/.vimrc.bepo
