@@ -16,7 +16,7 @@ set shell=/bin/sh "macvim rvm integration
 set clipboard=unnamed "use Os X clipboard
 
 syntax enable
- 
+
 "tralling whitespace on save
 autocmd FileType c,cpp,java,php autocmd BufWritePre <buffer> :%s/\s\+$//e
 
@@ -38,6 +38,9 @@ Bundle 'tpope/vim-commentary'
 Bundle 'tpope/vim-surround'
 Bundle 'vim-scripts/bufkill.vim'
 Bundle 'szw/vim-tags'
+Bundle 'scrooloose/nerdcommenter'
+"Bundle 'fholgado/minibufexpl.vim'
+"Bundle 'vim-airline/vim-airline'
 Bundle 'majutsushi/tagbar'
 Bundle 'jonathanfilip/vim-lucius'
 Bundle 'altercation/vim-colors-solarized'
@@ -71,6 +74,8 @@ set incsearch
  
 " disable incrementation of octal numbers
 set nrformats=hex
+
+set colorcolumn=80
  
 " ________________________________________________________
 "
@@ -78,8 +83,13 @@ set nrformats=hex
 " ________________________________________________________
 " remap the escape key (too far)
 imap jj <Esc>
+" remap the command key
+nnoremap ff :
+
+"list buffer and preselect buffer command
+map <leader>b :ls<cr>:buffer<Space>
 
 map <leader>n :NERDTreeToggle<cr>
 map <leader>t :TagbarToggle<cr>
 
-nnoremap ff :
+
