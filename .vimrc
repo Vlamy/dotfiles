@@ -9,11 +9,17 @@ set nowrapscan
 set showmatch
 set showmode
 set uc=0
-map \e[3~ x
-let c_comment_strings=1
  
-syntax on
+set nofoldenable
+
+set shell=/bin/sh "macvim rvm integration
+set clipboard=unnamed "use Os X clipboard
+
+syntax enable
  
+"tralling whitespace on save
+autocmd FileType c,cpp,java,php autocmd BufWritePre <buffer> :%s/\s\+$//e
+
 "Vundle
 set nocompatible "required for vundle
 filetype off
@@ -31,13 +37,25 @@ Bundle 'epmatsw/ag.vim'
 Bundle 'tpope/vim-commentary'
 Bundle 'tpope/vim-surround'
 Bundle 'vim-scripts/bufkill.vim'
+Bundle 'szw/vim-tags'
+Bundle 'majutsushi/tagbar'
+Bundle 'jonathanfilip/vim-lucius'
+Bundle 'altercation/vim-colors-solarized'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
 
-colorscheme delek
-set guifont=Monospace\ 8
-set foldmethod=indent
+"let g:solarized_termcolors=256
+set background=dark
+colorscheme solarized
+"colorscheme lucius 
+"LuciusBlack
+
+"Cursor highlight
+au WinLeave * set nocursorline nocursorcolumn
+au WinEnter * set cursorline cursorcolumn
+set cursorline cursorcolumn
+
 set nu
  
 " indent with two spaces (= Mozilla guidelines)
@@ -54,9 +72,6 @@ set incsearch
 " disable incrementation of octal numbers
 set nrformats=hex
  
-" use the current file's directory as Vim's working directory
-set autochdir
- 
 " ________________________________________________________
 "
 " custom mappings
@@ -65,4 +80,6 @@ set autochdir
 imap jj <Esc>
 
 map <leader>n :NERDTreeToggle<cr>
+map <leader>t :TagbarToggle<cr>
 
+nnoremap ff :
