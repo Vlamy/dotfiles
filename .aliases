@@ -7,10 +7,15 @@ git_interactive_rebase (){
   git rebase -i HEAD~$1
 }
 
+git_commit (){
+  git commit -m $1
+}
+
 alias gs="git status"
 alias gb="git checkout -b"
 alias gr="git pull --rebase"
 alias gri="git_interactive_rebase"
+alias gc="git_commit"
 alias gp="git push"
 alias gpf="git push -f"
 alias gh="echo \"\
@@ -19,5 +24,6 @@ alias gh="echo \"\
   gr = git pull --rebase \n
   gp = git push \n
   gp = git push -f \n
-  gri = git rebase -i HEAD~\
+  gc = git commit -m <commit_message>\n
+  gri = git rebase -i HEAD~<number_of_commit>\
   \""
