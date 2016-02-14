@@ -43,6 +43,7 @@ Bundle 'scrooloose/nerdcommenter'
 "Bundle 'vim-airline/vim-airline'
 Bundle 'majutsushi/tagbar'
 Bundle 'jonathanfilip/vim-lucius'
+Bundle 'christoomey/vim-tmux-navigator'
 Bundle 'altercation/vim-colors-solarized'
 
 call vundle#end()            " required
