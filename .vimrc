@@ -1,4 +1,4 @@
-let mapleader = ","
+let mapleader = "f"
 
 set bs=2
 set tw=0
@@ -39,7 +39,6 @@ Bundle 'tpope/vim-surround'
 Bundle 'vim-scripts/bufkill.vim'
 Bundle 'szw/vim-tags'
 Bundle 'scrooloose/nerdcommenter'
-"Bundle 'fholgado/minibufexpl.vim'
 "Bundle 'vim-airline/vim-airline'
 Bundle 'majutsushi/tagbar'
 Bundle 'jonathanfilip/vim-lucius'
@@ -52,8 +51,6 @@ filetype plugin indent on    " required
 "let g:solarized_termcolors=256
 set background=dark
 colorscheme solarized
-"colorscheme lucius 
-"LuciusBlack
 
 "Cursor highlight
 au WinLeave * set nocursorline nocursorcolumn
@@ -67,7 +64,7 @@ set tabstop=2
 set shiftwidth=2
 set expandtab
  
-" search
+"search
 set hlsearch
 set ignorecase
 set smartcase
@@ -76,21 +73,25 @@ set incsearch
 " disable incrementation of octal numbers
 set nrformats=hex
 
+" highlight 80th column
 set colorcolumn=80
- 
+
+" list of invisble chars to display
+set listchars=nbsp:¬,trail:•
+set list! "You see these breakpaces ?
+
 " ________________________________________________________
 "
 " custom mappings
 " ________________________________________________________
 " remap the escape key (too far)
-imap jj <Esc>
+imap <C-i> <Esc>
+
 " remap the command key
-nnoremap ff :
+nmap <C-i> :
 
 "list buffer and preselect buffer command
 map <leader>b :ls<cr>:buffer<Space>
-
 map <leader>n :NERDTreeToggle<cr>
-map <leader>t :TagbarToggle<cr>
-
+map <leader>s :Ag<Space>
 
