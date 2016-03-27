@@ -2,7 +2,6 @@ let mapleader = "f"
 
 set bs=2
 set tw=0
-set cindent
 set mouse=a
 set mousehide
 set nowrapscan
@@ -31,6 +30,7 @@ Bundle 'VundleVim/Vundle.vim'
 Bundle 'tpope/vim-fugitive'
 Bundle 'ctrlpvim/ctrlp.vim'
 Bundle 'vim-ruby/vim-ruby'
+Bundle 'tpope/vim-endwise'
 Bundle 'tpope/vim-rails'
 Bundle 'scrooloose/nerdtree'
 Bundle 'epmatsw/ag.vim'
@@ -44,6 +44,7 @@ Bundle 'majutsushi/tagbar'
 Bundle 'jonathanfilip/vim-lucius'
 Bundle 'christoomey/vim-tmux-navigator'
 Bundle 'altercation/vim-colors-solarized'
+Bundle 'ervandew/supertab'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -58,18 +59,24 @@ au WinEnter * set cursorline cursorcolumn
 set cursorline cursorcolumn
 
 set nu
- 
+
+let NERDTreeQuitOnOpen = 1
+
 " indent with two spaces (= Mozilla guidelines)
 set tabstop=2
 set shiftwidth=2
 set expandtab
- 
+
 "search
 set hlsearch
 set ignorecase
 set smartcase
 set incsearch
- 
+
+"inentation
+set smartindent
+set autoindent
+
 " disable incrementation of octal numbers
 set nrformats=hex
 
