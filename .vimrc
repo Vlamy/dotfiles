@@ -44,7 +44,9 @@ Bundle 'majutsushi/tagbar'
 Bundle 'jonathanfilip/vim-lucius'
 Bundle 'christoomey/vim-tmux-navigator'
 Bundle 'altercation/vim-colors-solarized'
-Bundle 'ervandew/supertab'
+Bundle 'jelera/vim-javascript-syntax'
+Bundle 'pangloss/vim-javascript'
+"Bundle 'ervandew/supertab'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -102,3 +104,6 @@ map <leader>b :ls<cr>:buffer<Space>
 map <leader>n :NERDTreeToggle<cr>
 map <leader>s :Ag<Space>
 
+"ruby map in ..vim/after/ftplugin/ruby.vim
+":map [[ ?def <CR>
+":map ]] /def <CR>
