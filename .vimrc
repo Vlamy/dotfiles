@@ -43,22 +43,30 @@ Bundle 'scrooloose/nerdcommenter'
 Bundle 'majutsushi/tagbar'
 Bundle 'jonathanfilip/vim-lucius'
 Bundle 'christoomey/vim-tmux-navigator'
-Bundle 'altercation/vim-colors-solarized'
+Bundle 'flazz/vim-colorschemes'
 Bundle 'jelera/vim-javascript-syntax'
 Bundle 'pangloss/vim-javascript'
 "Bundle 'ervandew/supertab'
+Bundle 'elixir-lang/vim-elixir'
+Bundle 'mattn/emmet-vim'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
 
-"let g:solarized_termcolors=256
-set background=dark
-colorscheme solarized
+"set background=dark
+colorscheme dark-ruby
 
 "Cursor highlight
-au WinLeave * set nocursorline nocursorcolumn
-au WinEnter * set cursorline cursorcolumn
+au WinLeave * setlocal nocursorline nocursorcolumn
+au WinEnter * setlocal cursorline cursorcolumn
+"augroup CursorLine
+"au!
+"  au VimEnter,WinEnter,BufWinEnter * setlocal cursorline
+"  au WinLeave * setlocal nocursorline
+"augroup END
 set cursorline cursorcolumn
+highlight CursorColumn ctermbg=235
+highlight CursorLine cterm=NONE ctermbg=235
 
 set nu
 
@@ -84,6 +92,7 @@ set nrformats=hex
 
 " highlight 80th column
 set colorcolumn=80
+highlight ColorColumn ctermbg=234
 
 " list of invisble chars to display
 set listchars=nbsp:¬,trail:•
