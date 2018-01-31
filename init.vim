@@ -2,12 +2,12 @@
 set clipboard=unnamed "use Os X clipboard
 
 " list of invisble chars to display
-set listchars=nbsp:¬,trail:•
+set listchars=nbsp:¬,trail:•,tab:>-
 set list! "You see these breakpaces ?
 
 set nu
 
-" indent with two spaces
+" indent with four spaces
 set tabstop=4
 set shiftwidth=4
 set expandtab
@@ -15,13 +15,14 @@ set expandtab
 "
 " Make sure you use single quotes
 call plug#begin('~/.vim/plugged')
-Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-fugitive'
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 Plug 'neomake/neomake', { 'commit': 'd5529f87ef3f9dee9ee534b43f128f164cabb900' }
 Plug 'flazz/vim-colorschemes'
 Plug 'vim-ruby/vim-ruby', { 'for': 'ruby' }
-Plug 'elixir-lang/vim-elixir', { 'for': 'elixir' }
+Plug 'elixir-lang/vim-elixir'
+Plug 'thinca/vim-ref'
+Plug 'awetzel/elixir.nvim', { 'do': 'yes \| ./install.sh' }
 Plug 'jelera/vim-javascript-syntax', { 'for': 'javascript' }
 Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
 Plug 'claco/jasmine.vim', { 'for': 'javascript' }
@@ -47,6 +48,8 @@ Plug 'tomtom/tlib_vim'
 Plug 'garbas/vim-snipmate'
 Plug 'honza/vim-snippets'
 Plug 'lumiliet/vim-twig'
+Plug 'kien/ctrlp.vim'
+Plug 'machakann/vim-highlightedyank'
 call plug#end()
 
 " colors
@@ -61,6 +64,10 @@ highlight ColorColumn ctermbg=235
 " native completion config
 set completeopt-=preview
 set completeopt=longest,menuone
+
+" custom JS folding
+autocmd FileType javascript,typescript,json setlocal foldmarker={,}
+set foldmethod=marker
 
 " ________________________________________________________
 " Plugin config
