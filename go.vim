@@ -91,6 +91,7 @@ let g:go_metalinter_autosave= 1
 let g:go_highlight_diagnostic_warnings= 0
 let g:syntastic_go_checkers= ['gometalinter']
 let g:go_jump_to_error = 0
+let g:go_fmt_fail_silently = 1
 
 " ________________________________________________________
 "
@@ -99,8 +100,9 @@ let g:go_jump_to_error = 0
 let mapleader = "f"
 
 map <leader>n :NERDTreeToggle<cr>
-
 map <leader>b :ls<cr>:buffer<Space>
+map <leader>j :lnext<cr>
+map <leader>k :lprev<cr>
 
 " remap the command
 imap <C-d> <Esc>:w<CR>:
@@ -116,8 +118,3 @@ nmap ,, A;<Esc>
 " Save on escape
 inoremap <C-c> <Esc>:w<CR>
 inoremap <Esc> <Esc>:w<CR>
-
-" completeopt remapping
-noremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
-inoremap <expr> <C-n> pumvisible() ? '<C-n>' : '<C-n><C-r>=pumvisible() ? "\<lt>Down>" : ""<CR>'
-inoremap <expr> <M-,> pumvisible() ? '<C-n>' : '<C-x><C-o><C-n><C-p><C-r>=pumvisible() ? "\<lt>Down>" : ""<CR>'
