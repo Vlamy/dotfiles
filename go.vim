@@ -87,11 +87,8 @@ let g:airline_theme='monochrome'
 
 " go config
 " let g:go_metalinter_command= 'golangci-lint'
-let g:go_metalinter_autosave= 1
-let g:go_highlight_diagnostic_warnings= 0
 let g:syntastic_go_checkers= ['gometalinter']
 let g:go_jump_to_error = 0
-let g:go_fmt_fail_silently = 1
 
 " ________________________________________________________
 "
